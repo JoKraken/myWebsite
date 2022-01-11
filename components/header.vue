@@ -1,9 +1,9 @@
 <template>
     <nav class="navbar">
-        <div class="navbar__header">
-            <img src="../static/octopus.png">
+        <a class="navbar__header" href="#">
+            <img src="../static/icons/octopus.png">
             <div>Johanna Kraken</div>
-        </div>
+        </a>
         <ul class="navbar__list">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#">Portfolio</a></li>
@@ -45,6 +45,8 @@
 
     .navbar__header > div {
         margin: auto;
+        text-decoration: none;
+        color: white;
     }
 
     .navbar__list > li {
