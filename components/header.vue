@@ -1,5 +1,6 @@
 <template>
     <nav class="navbar gridContainer__element">
+        <div class="navbar__background"></div>
         <div class="gridContainer gridContainer--secound">
             <a class="navbar__header" href="#">
                 <img src="../static/icons/octopus.png">
@@ -26,12 +27,21 @@
     }
 
     .navbar {
-        background-color: $primary;
         padding: 15px;
         display: flex;
         flex-flow: row;
         color: $white;
         justify-content: space-between;
+    }
+
+    .navbar__background {
+        background-color: $primary;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 8.5vh;
+        z-index: -1;
     }
 
     .navbar__header,
