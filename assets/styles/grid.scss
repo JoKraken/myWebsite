@@ -1,0 +1,33 @@
+.container {
+    max-width: 1160px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+
+    @media (max-width: 767px) {
+        padding: 0 12px;
+    }
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(12, [col-start] 1fr);
+    grid-gap: 18px;
+    align-items: center;
+
+    @media (max-width: 767px) {
+        grid-gap: 6px;
+    }
+}
+
+.gridContainer__element {
+    grid-column: col-start 1 / span 12;
+
+    @media (min-width: 767px) and (max-width: 1199px) {
+        grid-column: col-start 2 / span 10;
+    }
+}
+
+#__layout {
+    overflow: hidden;
+}
