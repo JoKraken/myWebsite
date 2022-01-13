@@ -2,15 +2,15 @@
     <nav class="navbar gridContainer__element">
         <div class="navbar__background"></div>
         <div class="gridContainer gridContainer--secound">
-            <a class="navbar__header" href="#">
+            <a class="navbar__header" href="/">
                 <img src="../static/icons/octopus.png">
                 <span>Johanna Kraken</span>
             </a>
             <div class="navbar__list">
                 <ul>
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="/portfolio/">Portfolio</a></li>
+                    <li><a href="/contact/">Contact</a></li>
                 </ul>
             </div>
         </div>

@@ -12,9 +12,9 @@
                 <p>Pages</p>
                 <hr />
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/portfolio/">Portfolio</a></li>
+                    <li><a href="/contact/">Contact</a></li>
                 </ul>
             </li>
             <li class="footer__links">
