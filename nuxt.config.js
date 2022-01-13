@@ -24,10 +24,6 @@ export default {
     { src: "~/assets/styles/grid.scss", lang: "sass"},
   ],
 
-  styleResources: {
-    scss: ["./assets/styles/*.scss"],
-  },
-
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
   ],
@@ -41,7 +37,12 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    "@nuxtjs/style-resources"
   ],
+
+  styleResources: {
+    scss: ["./assets/styles/*.scss"],
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

@@ -1,6 +1,6 @@
 <template>
-    <footer class="footer">
-        <ul class="footer_list">
+    <footer class="footer gridContainer__element">
+        <ul class="footer">
             <li>
                 <p>Johanna Kraken</p>
                 <p>Franz-Sellhorst-Str. 20,<br> 48432 Rheine</p>
@@ -22,28 +22,38 @@
     </footer>
 </template>
 
-<style>
+<style lang="scss" scoped>
     body {
         margin: 0;
     }
 
     .footer {
-        background-color: brown;
+        background-color: $primary;
         padding: 15px;
         display: flex;
         flex-flow: row;
-        color: white;
-        justify-content: space-between
-
-
+        color: $white;
+        justify-content: space-between;
     }
-    
+
+    .footer__header,
     .footer__list {
         display: flex;
         flex-flow: row;
 
     }
-    
+
+    .footer__header > img {
+        width: 40px;
+        margin-right: 25px;
+    }
+
+    .footer__header > div {
+        margin: auto;
+        text-decoration: none;
+        color: white;
+    }
+
     .footer__list > li {
         margin: 0 15px;
     }

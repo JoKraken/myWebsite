@@ -5,7 +5,7 @@
     width: 100%;
 
     @media (max-width: 767px) {
-        padding: 0 12px;
+        padding: 0;
     }
 }
 
@@ -14,9 +14,14 @@
     grid-template-columns: repeat(12, [col-start] 1fr);
     grid-gap: 18px;
     align-items: center;
+    width: 100%;
 
     @media (max-width: 767px) {
         grid-gap: 6px;
+    }
+
+    &--secound {
+        grid-template-columns: repeat(10, [col-start] 1fr);
     }
 }
 

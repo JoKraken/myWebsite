@@ -1,5 +1,7 @@
 <template>
-  <Test />
+  <div class="gridContainer__element">
+    <Test />
+  </div>
 </template>
 
 <script>
