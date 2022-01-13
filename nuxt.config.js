@@ -12,13 +12,21 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/octopus.png' }
+      { rel: 'icon', type: 'image/x-icon', href: './icons/octopus.png' }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    { src: "~/assets/styles/mystyle.scss", lang: "sass"},
+    { src: "~/assets/styles/colors.scss", lang: "sass"},
+    { src: "~/assets/styles/mixins.scss", lang: "sass"},
+    { src: "~/assets/styles/grid.scss", lang: "sass"},
   ],
+
+  styleResources: {
+    scss: ["./assets/styles/*.scss"],
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
