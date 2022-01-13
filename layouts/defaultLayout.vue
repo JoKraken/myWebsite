@@ -10,7 +10,10 @@
 
 <style lang="scss" scoped>
 .content {
-    @media (max-width: 767px) {
+    min-height: 66vh; 
+
+    @include for-phone {
+        min-height: 54vh;
         padding: 0 12px;
     }
 }
