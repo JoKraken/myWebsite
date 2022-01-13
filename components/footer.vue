@@ -21,9 +21,9 @@
                 <p>Links</p>
                 <hr />
                 <ul>
-                    <li><a href="#">Github</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">XING</a></li>
+                    <li><a href="https://github.com/JoKraken" target="_blank">Github</a></li>
+                    <li><a href="https://www.linkedin.com/in/johannakraken/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.xing.com/profile/Johanna_Kraken/cv" target="_blank">XING</a></li>
                 </ul>
             </li>
         </ul>
