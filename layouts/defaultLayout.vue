@@ -10,10 +10,10 @@
 
 <style lang="scss" scoped>
 .content {
-    min-height: 66vh; 
+    min-height: 52vh; 
 
     @include for-phone {
-        min-height: 54vh;
+        min-height: 40vh;
         padding: 0 12px;
     }
 }
