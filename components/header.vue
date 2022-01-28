@@ -2,6 +2,7 @@
     <nav class="navbar gridContainer__element">
         <div class="navbar__background"></div>
         <div class="gridContainer gridContainer--secound">
+            <!--Links class="navbar__header" :data="data"-->
             <a class="navbar__header" href="/">
                 <img src="../static/icons/octopus.png">
                 <span>Johanna Kraken</span>
@@ -18,7 +19,17 @@
 </template>
 
 <script>
+  export default {
+    data() {
+        let data = {
+            name:"octopus",
+            url:"Johanna Kraken",
+            link:"/"
+        }
 
+        return {data:data};
+    }
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -40,7 +51,7 @@
         top: 0;
         right: 0;
         left: 0;
-        height: 8.5vh;
+        height: 11vh;
         z-index: -1;
     }
 
