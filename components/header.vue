@@ -94,7 +94,7 @@
     }
 
     .navbar__header > span {
-        margin: auto;
+        margin: auto 0 auto 15px;
         text-decoration: none;
         color: white;
     }

@@ -1,6 +1,6 @@
 <template>
   <div class="gridContainer__element">
-    <p>Ich bin unter folgenden Social-Media-Acounts erreichen:</p> 
+    <h2>Ich bin unter folgenden Social-Media-Acounts erreichen:</h2> 
     <div class="contact__linklist">
       <Links v-for="(item, index) in data" :key="index" :data="item"/>
     </div>

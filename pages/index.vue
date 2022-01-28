@@ -36,7 +36,6 @@
   .introduction {
     p {
       font-size: 50px;
-
     }
   }
 
