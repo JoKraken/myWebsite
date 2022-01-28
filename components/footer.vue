@@ -46,14 +46,14 @@
     .footer__background {
         background-color: $primary;
         position: absolute;
-        bottom: 0;
+        //bottom: 0;
         right: 0;
         left: 0;
-        height: 21.5vh;
+        height: 29.5vh;
         z-index: -1;
 
         @include for-phone {
-            height: 35vh;
+            height: 45vh;
         }
     }
 
