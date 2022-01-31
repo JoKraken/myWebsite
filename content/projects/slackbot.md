@@ -2,8 +2,9 @@
 title: slackbot
 name: Slack Bot
 desc: Slack Bot ist hier
-category: Frontend, Backend
-language: Angular, TypeScript, Node.js
+category: [Frontend, Backend]
+language: [Angular, TypeScript, Node.js]
+framework:
 datum: 2019
 img:
 link: https://github.com/JoKraken/slackbot

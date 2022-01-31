@@ -13,22 +13,7 @@
       return { projects }
     },
     data(){
-      return {
-        projects: [{
-          name: "test",
-          datum: "2021",
-          desc:"lorum ipsum",
-          img: "",
-          link: "https://www.google.com/",
-        },{
-          name: "test2",
-          datum: "2021",
-          desc:"lorum ipsum",
-          img: "",
-          link: "https://www.google.com/",
-          right: true
-        }]
-      }
+      return {}
     }
   }
 </script>
