@@ -8,12 +8,15 @@
       <p class="projectItem__filter"> 
         <Button secoundary="true" :data="{name: data.category[0]}" @filter="filterCat"/>
         <span> | </span> 
-        <Button secoundary="true" :data="{name: item}" v-for="(item, index) in data.language" :key="10+index" @filter="filterLang"/>
+        <Button secoundary="true" :data="{name: item}" v-for="(item, index) in data.language" :key="10+index" @filter="filterLang" :if="index < 2"/>
         <span> | </span> 
-        <Button secoundary="true" :data="{name: item}" v-for="(item, index) in data.framework" :key="index" @filter="filterFram"/>
+        <Button secoundary="true" :data="{name: item}" v-for="(item, index) in data.framework" :key="index" @filter="filterFram" :if="index < 2"/>
       </p>
-      <p class="projectItem__describtion">{{data.desc}}</p>
-      <Button :data="button" />
+      <p class="projectItem__describtion">{{data.descSmall}}</p>
+      <div class="projectItem__buttons">
+        <Button :data="buttonGithub" />
+        <Button :data="buttonMore" />
+      </div>
     </div>
   </div>
 </template>
@@ -23,9 +26,14 @@
     props: ['data', 'right'],
     data() {
       return {
-        button: {
+        buttonGithub: {
           name: "Github",
           link: this.data.link
+        },
+        buttonMore: {
+          name: "Mehr erfahren",
+          link: "/portfolio/"+this.data.title,
+          sameTap: true
         }
       };
     },
@@ -104,5 +112,9 @@
 
   .projectItem__describtion {
     margin-bottom: 30px;
+  }
+
+  .projectItem__buttons {
+    display: flex;
   }
 </style>

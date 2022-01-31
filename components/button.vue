@@ -1,9 +1,12 @@
 <template>
-  <div v-if="data" :class="secoundary ? 'secoundary' : ''">
-    <a v-if="data.link != undefined" class="button" :href="data.link" target="_blank">
+  <div class="button__container" v-if="data" :class="secoundary ? 'secoundary' : ''">
+    <a v-if="data.sameTap" class="button" :href="data.link">
       {{data.name}}
     </a>
-    <a v-if="data.link == undefined" class="button" @click="filter()">
+    <a v-if="!data.sameTap && data.link != undefined" class="button" :href="data.link" target="_blank">
+      {{data.name}}
+    </a>
+    <a v-if="!data.sameTap && data.link == undefined" class="button" @click="filter()">
       {{data.name}}
     </a>
   </div>
@@ -24,12 +27,16 @@
 </script>
              
 <style lang="scss" scoped>
+  .button__container {
+    margin-right: 15px;
+  }
+
   .secoundary {
       .button {
         border: none;
         color: $primary;
         background-color: transparent;
-        padding: 0 15px 0 0;
+        padding: 0;
       }
   }
 
