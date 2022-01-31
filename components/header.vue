@@ -51,7 +51,7 @@
         top: 0;
         right: 0;
         left: 0;
-        height: 11vh;
+        height: 80px;
         z-index: -1;
     }
 

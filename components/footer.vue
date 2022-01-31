@@ -49,11 +49,11 @@
         //bottom: 0;
         right: 0;
         left: 0;
-        height: 29.5vh;
+        height: 185px;
         z-index: -1;
 
         @include for-phone {
-            height: 45vh;
+            height: 315px;
         }
     }
 
