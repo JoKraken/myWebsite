@@ -8,8 +8,7 @@
   export default {
     layout: 'defaultLayout',
     async asyncData({ $content, params }) {
-      const projects = await $content('projects').fetch()
-      console.log(projects);
+      const projects = await $content('projects').fetch();
       return { projects }
     },
     data(){

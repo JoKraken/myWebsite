@@ -4,7 +4,7 @@ name: Node Datenbank
 desc: Nade Datenabnk ist hier
 category: [Backend]
 language: [Java, Node.js]
-framework:
+framework: []
 datum: 2018
 img:
 link: https://github.com/JoKraken/nodedb

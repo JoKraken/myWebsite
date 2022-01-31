@@ -1,11 +1,18 @@
 <template>
   <div class="projectItem gridContainer" v-bind:class="{ 'projectItem--right': right }">
     <div class="projectItem__img">
-      <img src="" alt="">
+      <img :src="'../assets/icons/code.png'" :alt="data.img">
     </div>
     <div class="projectItem__container">
       <h1 class="projectItem__headline">{{data.name}} <span class="projectItem__datum">{{data.datum}}</span></h1>
-      <p>{{data.desc}}</p>
+      <p class="projectItem__filter"> 
+        <Button secoundary="true" :data="{name: data.category[0]}" @filter="filterCat"/>
+        <span> | </span> 
+        <Button secoundary="true" :data="{name: item}" v-for="(item, index) in data.language" :key="10+index" @filter="filterLang"/>
+        <span> | </span> 
+        <Button secoundary="true" :data="{name: item}" v-for="(item, index) in data.framework" :key="index" @filter="filterFram"/>
+      </p>
+      <p class="projectItem__describtion">{{data.desc}}</p>
       <Button :data="button" />
     </div>
   </div>
@@ -13,13 +20,29 @@
 
 <script>
   export default {
-      props: ['data', 'right'],
-      data() {
-          return {button: {
-            name: "Github",
-            link: this.data.link
-          }};
+    props: ['data', 'right'],
+    data() {
+      return {
+        button: {
+          name: "Github",
+          link: this.data.link
+        }
+      };
+    },
+    methods: {
+      filterCat(event){
+        console.log(event);
+        this.$emit('filter', event, 0);
+      },
+      filterLang(event){
+        console.log(event);
+        this.$emit('filter', event, 1);
+      },
+      filterFram(event){
+        console.log(event);
+        this.$emit('filter', event, 2);
       }
+    }
   }
 </script>
              
@@ -31,8 +54,11 @@
   }
 
   .projectItem--right {
+    & > div {
+      grid-column: col-start 1;
+    }
     & > div:first-of-type {
-      grid-column: col-start 7 / span 6;
+      grid-column: col-start 7;
     }
 
     .projectItem__container {
@@ -65,5 +91,18 @@
   .projectItem__datum {
     font-size: 18px;
     color: $primary;
+  }
+
+  .projectItem__filter {
+    display: flex;
+    color: $primary;
+
+    span {
+      padding-right: 15px;
+    }
+  }
+
+  .projectItem__describtion {
+    margin-bottom: 30px;
   }
 </style>
