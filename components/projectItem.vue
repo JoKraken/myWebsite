@@ -1,7 +1,7 @@
 <template>
   <div class="projectItem gridContainer" v-bind:class="{ 'projectItem--right': right }">
     <div class="projectItem__img">
-      <img v-bind:src="'@/assets/img/'+data.img+'.png'" :alt="data.img">
+      <Picture v-if="data.img" :img="data.img" />
     </div>
     <div class="projectItem__container">
       <h1 class="projectItem__headline">
@@ -64,10 +64,10 @@
 
   .projectItem--right {
     & > div {
-      grid-column: col-start 1;
+      order: 1;
     }
     & > div:first-of-type {
-      grid-column: col-start 7;
+      order: 2;
     }
 
     .projectItem__container {
@@ -96,11 +96,15 @@
       padding-left: 30px;
     }
   }
+
+  .projectItem__img {
+    margin: 30px 0 30px 30px;
+  }
   
-    .projectItem__headline {
-      display: inline-flex;
-      flex-flow: wrap;
-    }
+  .projectItem__headline {
+    display: inline-flex;
+    flex-flow: wrap;
+  }
 
   .projectItem__number {
     font-size: 44px;
