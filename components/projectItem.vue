@@ -4,7 +4,11 @@
       <img :src="'../assets/icons/code.png'" :alt="data.img">
     </div>
     <div class="projectItem__container">
-      <h1 class="projectItem__headline"><span class="projectItem__number">{{num}}.</span>{{data.name}} <span class="projectItem__datum">{{data.datum}}</span></h1>
+      <h1 class="projectItem__headline">
+        <span v-if="num" class="projectItem__number">{{num}}.</span>
+        {{data.name}} 
+        <span class="projectItem__datum">{{data.datum}}</span>
+      </h1>
       <div class="projectItem__filter"> 
         <Button secoundary="true" :data="{name: data.category[0]}" @filter="filterCat"/>
         <span> | </span> 
@@ -25,6 +29,7 @@
   export default {
     props: ['data', 'right', 'num'],
     data() {
+      console.log(this.num);
       return {
         buttonGithub: {
           name: "Github",
@@ -105,6 +110,7 @@
     font-size: 44px;
     color: $primary;
     display: inline-block;
+    padding-right: 10px;
   }
 
   .projectItem__datum {
