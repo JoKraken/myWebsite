@@ -26,7 +26,6 @@
       projects.push(temp);
       temp = await $content('projects', 'slackbot').fetch();
       projects.push(temp);
-      console.log(projects);
       return { projects }
     },
   }

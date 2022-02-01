@@ -2,14 +2,14 @@
   <div class="projectItems">
     <h1 class="projectItems__headline">Meine Projekte</h1>
     <div class="projectItems__filter">
-      <label>Filter:</label> 
+      <input type="text" id="search" name="search" placeholder="suchen"  v-model="search">
       <Filters v-bind:options="categories" art="categories" defaultItem="Alle Arten" @filter="filterAfterProject" ref="formArt" />
       <Filters v-bind:options="languages" art="languages" defaultItem="Alle Sprachen" @filter="filterAfterLanguage" ref="formLang" />
       <Filters v-bind:options="frameworks" art="frameworks" defaultItem="Alle Frameworks" @filter="filterAfterFramework" ref="formFram" />
       <Button class="projectItems__filter-button" :data="revers" @filter="reset" />
     </div>
-    <div class="projectItems__itemsCount">( {{projects.length}} )</div>
-    <ProjectItem v-for="(project, index) in projects" :key="index" :num="index+1" :data="project" :right="index%2==1" @filter="filter"/>
+    <div class="projectItems__itemsCount">( {{resultSearch.length}} )</div>
+    <ProjectItem v-for="(project, index) in resultSearch" :key="index" :num="index+1" :data="project" :right="index%2==1" @filter="filter"/>
     <div v-if="projects.length == 0">Es wurden keine Projekte mit den Filtereinstellungen gefunden</div>
   </div>
 </template>
@@ -24,16 +24,32 @@
       let categories = [];
       let filterOp = ["none", "none", "none"];
       let revers = {name: "Filter löschen"};
+      let search = "";
 
-      return { projects, categories, languages, frameworks, revers, filterOp };
+      return { projects, categories, languages, frameworks, revers, filterOp, search };
     },
     created() {
       this.getFilters();
+    },
+    computed: {
+      resultSearch() {
+        if (this.search) {
+          return this.projects.filter(item => {
+            return this.search
+              .toLowerCase()
+              .split(" ")
+              .every(v => item.name.toLowerCase().includes(v));
+          });
+        } else {
+          return this.projects;
+        }
+      }
     },
     methods: {
       reset(){
         this.filterOp = ["none", "none", "none"];
         this.projects = this.data;
+        this.search = "";
         this.$refs.formArt.editSelected("none");
         this.$refs.formFram.editSelected("none");
         this.$refs.formLang.editSelected("none");
@@ -51,7 +67,6 @@
             element.framework.forEach(elfram => {
               if(elfram != '')
                 this.frameworks.forEach(framework => {
-                  console.log(framework);
                   if(framework == elfram) isIn = true;
                 });
               if(!isIn) this.frameworks.push(elfram);
@@ -137,6 +152,14 @@
   .projectItems__filter {
     text-align: right;
     width: 100%;
+
+    input {
+      border: $primary 1px solid;
+      border-radius: 5px;
+      padding: 10px;
+      margin-right: 15px;
+      width: 43%;
+    }
 
     @include for-phone {
       text-align: left;

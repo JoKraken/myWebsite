@@ -27,6 +27,10 @@
 <style lang="scss" scoped>
     .filters {
         margin-top: 15px;
+        min-width: 150px;
+        border: $primary 1px solid;
+        border-radius: 5px;
+        padding: 10px;
     }
 
     ::v-deep option:hover{

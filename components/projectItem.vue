@@ -1,7 +1,7 @@
 <template>
   <div class="projectItem gridContainer" v-bind:class="{ 'projectItem--right': right }">
     <div class="projectItem__img">
-      <img :src="'../assets/icons/code.png'" :alt="data.img">
+      <img v-bind:src="'@/assets/img/'+data.img+'.png'" :alt="data.img">
     </div>
     <div class="projectItem__container">
       <h1 class="projectItem__headline">
@@ -29,7 +29,6 @@
   export default {
     props: ['data', 'right', 'num'],
     data() {
-      console.log(this.num);
       return {
         buttonGithub: {
           name: "Github",
@@ -44,15 +43,12 @@
     },
     methods: {
       filterCat(event){
-        console.log(event);
         this.$emit('filter', event, 0);
       },
       filterLang(event){
-        console.log(event);
         this.$emit('filter', event, 1);
       },
       filterFram(event){
-        console.log(event);
         this.$emit('filter', event, 2);
       }
     }
