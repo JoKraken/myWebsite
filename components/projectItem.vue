@@ -10,11 +10,11 @@
         <span class="projectItem__datum">{{data.datum}}</span>
       </h1>
       <div class="projectItem__filter"> 
-        <Button secoundary="true" :data="{name: data.category[0]}" @filter="filterCat"/>
+        <Button secoundary="true" :data="{name: data.category[0]}"/>
         <span> | </span> 
-        <Button secoundary="true" :data="{name: item}" v-for="(item, index) in data.language" :key="10+index" @filter="filterLang" :if="index < 2"/>
+        <Button secoundary="true" :data="{name: item}" v-for="(item, index) in data.language" :key="10+index" :if="index < 2"/>
         <span> | </span> 
-        <Button secoundary="true" :data="{name: item}" v-for="(item, index) in data.framework" :key="index" @filter="filterFram" :if="index < 2"/>
+        <Button secoundary="true" :data="{name: item}" v-for="(item, index) in data.framework" :key="index" :if="index < 2"/>
       </div>
       <p class="projectItem__describtion">{{data.descSmall}}</p>
       <div class="projectItem__buttons">

@@ -3,16 +3,18 @@
     <Links :data="{link: '/portfolio/', name: 'left-arrow', url: 'zurück'}"/>
     <h1 class="project__headline">{{data.name}} <span class="project__datum">{{data.datum}}</span></h1>
     <p class="project__filter"> 
-      <Button secoundary="true" :data="{name: data.category[0]}" @filter="filterCat"/>
+      <Button secoundary="true" :data="{name: data.category[0]}"/>
       <span> | </span> 
-      <Button secoundary="true" :data="{name: item}" v-for="(item, index) in data.language" :key="10+index" @filter="filterLang"/>
+      <Button secoundary="true" :data="{name: item}" v-for="(item, index) in data.language" :key="10+index"/>
       <span> | </span> 
-      <Button secoundary="true" :data="{name: item}" v-for="(item, index) in data.framework" :key="index" @filter="filterFram"/>
+      <Button secoundary="true" :data="{name: item}" v-for="(item, index) in data.framework" :key="index"/>
     </p>
     <p class="project__describtion">{{data.desc}}</p>
     <div class="project__buttons">
       <Button :data="{name: 'Github',link: data.link}" />
     </div>
+
+    <Carousel class="project__carousel" :imgs="data.img"/>
   </div>
 </template>
 
@@ -51,5 +53,14 @@
 
   .project__buttons {
     display: flex;
+  }
+
+  ::v-deep .project__carousel {
+    margin: 30px 0;
+    height: 40vh;
+
+   .carousel__img {
+      height: 40vh;
+    }
   }
 </style>

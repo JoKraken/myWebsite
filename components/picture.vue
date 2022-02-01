@@ -1,7 +1,7 @@
 <template>
-  <div class="picture">
+  <figure class="picture">
     <img :if="img" :src="url">
-  </div>
+  </figure>
 </template>
 
 <script>
@@ -20,6 +20,7 @@
   .picture {
     img {
       width: 100%;
+      height: 100%;
     }
   }
 </style>
