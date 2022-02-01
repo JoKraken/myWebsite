@@ -7,6 +7,6 @@ category: [Frontend]
 language: [Angular5, TypeScript, HTML5, CSS3, SASS]
 framework: [Ionic, Cordova]
 datum: 2018
-img: rma
+img: [rma_logo, rma_index, rma_search, rma_settings]
 link: https://github.com/JoKraken/RMA_graduation_work
 ---

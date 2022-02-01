@@ -7,6 +7,6 @@ category: [Frontend & Backend]
 language: [JavaScript, Node.js, HTML5, CSS3, Angular5]
 framework: [Express.js]
 datum: 2019
-img:
+img: [sscf_myReports, sscf_add, sscf_admin, sscf_settings]
 link: https://github.com/JoKraken/sscf-endproject
 ---

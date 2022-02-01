@@ -7,6 +7,6 @@ category: [Backend]
 language: [ JavaScript, Node.js]
 framework: [Express.js]
 datum: 2019
-img:
+img: [slackbot]
 link: https://github.com/JoKraken/slackbot
 ---

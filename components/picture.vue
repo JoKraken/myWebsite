@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="picture">
     <img :if="img" :src="url">
   </div>
 </template>
@@ -17,5 +17,9 @@
 </script>
 
 <style lang="scss" scoped>
-
+  .picture {
+    img {
+      width: 100%;
+    }
+  }
 </style>

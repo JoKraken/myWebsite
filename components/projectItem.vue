@@ -1,7 +1,7 @@
 <template>
   <div class="projectItem gridContainer" v-bind:class="{ 'projectItem--right': right }">
     <div class="projectItem__img">
-      <Picture v-if="data.img" :img="data.img" />
+      <Picture v-if="data.img" :img="data.img[0]" />
     </div>
     <div class="projectItem__container">
       <h1 class="projectItem__headline">
@@ -100,6 +100,10 @@
   .projectItem__img {
     text-align: center;
   }
+
+    ::v-deep .projectItem__img > div > img {
+      max-width: 90%;
+    }
   
   .projectItem__headline {
     display: inline-flex;

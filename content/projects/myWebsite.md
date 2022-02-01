@@ -7,6 +7,6 @@ category: [Frontend]
 language: [Vue.js, HTML5, CSS3, SASS]
 framework: [Nuxt.js]
 datum: 2022
-img:
+img: [default]
 link: https://github.com/JoKraken/myWebsite
 ---

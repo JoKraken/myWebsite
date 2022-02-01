@@ -7,6 +7,6 @@ category: [Backend]
 language: [Java, jQuery 1.4]
 framework: [Spring Boot]
 datum: 2021
-img:
+img: [default]
 link: https://github.com/JoKraken/DonutQueue
 ---
