@@ -4,14 +4,14 @@
       <img :src="'../assets/icons/code.png'" :alt="data.img">
     </div>
     <div class="projectItem__container">
-      <h1 class="projectItem__headline">{{data.name}} <span class="projectItem__datum">{{data.datum}}</span></h1>
-      <p class="projectItem__filter"> 
+      <h1 class="projectItem__headline"><span class="projectItem__number">{{num}}.</span>{{data.name}} <span class="projectItem__datum">{{data.datum}}</span></h1>
+      <div class="projectItem__filter"> 
         <Button secoundary="true" :data="{name: data.category[0]}" @filter="filterCat"/>
         <span> | </span> 
         <Button secoundary="true" :data="{name: item}" v-for="(item, index) in data.language" :key="10+index" @filter="filterLang" :if="index < 2"/>
         <span> | </span> 
         <Button secoundary="true" :data="{name: item}" v-for="(item, index) in data.framework" :key="index" @filter="filterFram" :if="index < 2"/>
-      </p>
+      </div>
       <p class="projectItem__describtion">{{data.descSmall}}</p>
       <div class="projectItem__buttons">
         <Button :data="buttonGithub" />
@@ -23,7 +23,7 @@
 
 <script>
   export default {
-    props: ['data', 'right'],
+    props: ['data', 'right', 'num'],
     data() {
       return {
         buttonGithub: {
@@ -95,6 +95,17 @@
       padding-left: 30px;
     }
   }
+  
+    .projectItem__headline {
+      display: inline-flex;
+      flex-flow: wrap;
+    }
+
+  .projectItem__number {
+    font-size: 44px;
+    color: $primary;
+    display: inline-block;
+  }
 
   .projectItem__datum {
     font-size: 18px;
@@ -104,6 +115,8 @@
   .projectItem__filter {
     display: flex;
     color: $primary;
+    display: inline-flex;
+    flex-flow: wrap;
 
     span {
       padding-right: 15px;
@@ -112,6 +125,10 @@
 
   .projectItem__describtion {
     margin-bottom: 30px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
 
   .projectItem__buttons {

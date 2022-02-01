@@ -5,7 +5,7 @@ desc: Dieses Projekt beinhaltet den Login- und Registrierungsprozess in einer An
 descSmall: Dieses Projekt beinhaltet den Login- und Registrierungsprozess in einer Anwendung.
 category: [Frontend]
 language: [Javascript, Angular5, HTML5, CSS3]
-framework: []
+framework: ['']
 datum: 2021
 img:
 link: https://github.com/JoKraken/LoginProject

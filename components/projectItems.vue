@@ -1,6 +1,6 @@
 <template>
   <div class="projectItems">
-    <h1 class="projectItems__headline">Hier sind meine Projekte:</h1>
+    <h1 class="projectItems__headline">Meine Projekte</h1>
     <div class="projectItems__filter">
       <label>Filter:</label> 
       <Filters v-bind:options="categories" art="categories" defaultItem="Alle Arten" @filter="filterAfterProject" ref="formArt" />
@@ -8,7 +8,8 @@
       <Filters v-bind:options="frameworks" art="frameworks" defaultItem="Alle Frameworks" @filter="filterAfterFramework" ref="formFram" />
       <Button class="projectItems__filter-button" :data="revers" @filter="reset" />
     </div>
-    <ProjectItem v-for="(project, index) in projects" :key="index" :data="project" :right="index%2==1" @filter="filter"/>
+    <div class="projectItems__itemsCount">( {{projects.length}} )</div>
+    <ProjectItem v-for="(project, index) in projects" :key="index" :num="index+1" :data="project" :right="index%2==1" @filter="filter"/>
     <div v-if="projects.length == 0">Es wurden keine Projekte mit den Filtereinstellungen gefunden</div>
   </div>
 </template>
@@ -48,9 +49,11 @@
               isIn = false;
             });
             element.framework.forEach(elfram => {
-              this.frameworks.forEach(framework => {
-                if(framework == elfram) isIn = true;
-              });
+              if(elfram != '')
+                this.frameworks.forEach(framework => {
+                  console.log(framework);
+                  if(framework == elfram) isIn = true;
+                });
               if(!isIn) this.frameworks.push(elfram);
               isIn = false;
             });
@@ -124,19 +127,41 @@
 <style lang="scss" scoped>
   .projectItems__headline,
   .projectItems__filter {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 
     @include for-phone {
-      margin-bottom: 30px;
+      margin-bottom: 10px;
     }
   }
 
   .projectItems__filter {
-    float: right;
+    text-align: right;
+    width: 100%;
+
+    @include for-phone {
+      text-align: left;
+    }
   }
 
   .projectItems__filter-button {
-    float: right;
+    display: inline-flex;
+    margin-top: 15px;
     margin-left: 15px;
+    text-align: right;
+
+    @include for-phone {
+      margin-left: 0;
+    }
+  }
+
+  .projectItems__itemsCount {
+    color: $primary;
+    text-align: right;
+    width: 100%;
+    margin-bottom: 30px;
+
+    @include for-phone {
+      margin-bottom: 20px;
+    }
   }
 </style>

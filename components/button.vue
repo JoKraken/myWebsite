@@ -47,6 +47,8 @@
       color: $white;
       padding: 10px;
       text-decoration: none;
+      display: block;
+      text-align: center;
 
       &:hover {
           text-decoration: underline;
