@@ -1,6 +1,6 @@
 <template>
-  <a class="links" :href="data.link">
-    <img :if="data.name" :src="img">
+  <a class="link" v-bind:class="{'link__icon': data.name == undefined}" :href="data.link">
+    <img :if="data.name == undefined" :src="img">
     <p>{{data.url}}</p>
   </a>
 </template>
@@ -18,7 +18,7 @@
 </script>
 
 <style lang="scss" scoped>
-    a {
+    .link {
       text-decoration: none;
       display: inline-flex;
       color: $black;
@@ -29,7 +29,7 @@
 
       & > p { 
           display: inline-block;
-          margin: 0;
+          margin: 0 5px 0 0;
       }
 
       &:hover {
@@ -39,5 +39,9 @@
               text-decoration: underline;
           }
       }
+    }
+
+    .link__icon {
+      display: inline;
     }
 </style>

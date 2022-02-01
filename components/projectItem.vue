@@ -98,7 +98,7 @@
   }
 
   .projectItem__img {
-    margin: 30px 0 30px 30px;
+    text-align: center;
   }
   
   .projectItem__headline {
