@@ -42,6 +42,6 @@
   }
 
   ::v-deep .link > img {
-    width: 250px;
+    width: 250px !important;
   }
 </style>
