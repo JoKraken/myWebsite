@@ -1,8 +1,10 @@
 <template>
-  <a class="link" v-bind:class="{'link__icon': data.name == undefined}" :href="data.link">
-    <img :if="data.name == undefined" :src="img">
-    <p>{{data.url}}</p>
-  </a>
+  <div>
+    <a class="link" v-bind:class="{'link__icon': data.name == undefined}" :href="data.link" :target="data.target">
+      <img :if="data.name == undefined" :src="img">
+      <p>{{data.url}}</p>
+    </a>
+  </div>
 </template>
 
 <script>

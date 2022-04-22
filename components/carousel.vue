@@ -1,5 +1,5 @@
 <template>
-    <div id="slider">
+    <div id="slider"> 
       <transition-group tag="div" :name="transitionName" class="slides-group">
         <div v-if="show" :key="current" class="slide">
           <Picture class="carousel__img" :img="getURL()" />
