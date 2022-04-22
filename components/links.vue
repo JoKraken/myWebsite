@@ -1,15 +1,18 @@
 <template>
-  <a class="link" v-bind:class="{'link__icon': data.name == undefined}" :href="data.link">
-    <img :if="data.name == undefined" :src="img">
-    <p>{{data.url}}</p>
-  </a>
+  <div>
+    <a class="link" v-bind:class="{'link__icon': data.name == undefined}" :href="data.link" :target="data.target">
+      <img :if="data.name == undefined" :src="img">
+      <p>{{data.url}}</p>
+    </a>
+  </div>
 </template>
 
 <script>
   export default {
       props: ['data'],
       data() {
-          let img = (this.data.name) ? require('@/assets/icons/'+this.data.name+'.png') : "";
+          let img = (this.data.name) ? require('@/assets/icons/'+this.data.name) : "";
+          console.log(img);
           return {
             img
           };
@@ -25,6 +28,7 @@
 
       & > img {
         margin-right: 5px;
+        width: 15px;
       }
 
       & > p { 

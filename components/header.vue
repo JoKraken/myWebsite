@@ -4,7 +4,7 @@
         <div class="gridContainer gridContainer--secound">
             <!--Links class="navbar__header" :data="data"-->
             <a class="navbar__header" href="/">
-                <img src="../static/icons/octopus.png">
+                <img src="../assets/icons/octopus.png">
                 <span>Johanna Kraken</span>
             </a>
             <div class="navbar__list">
@@ -51,7 +51,7 @@
         top: 0;
         right: 0;
         left: 0;
-        height: 80px;
+        height: 84px;
         z-index: -1;
     }
 
@@ -106,6 +106,11 @@
     .navbar__list > ul > li > a {
         text-decoration: none;
         color: white;
+    }
+
+    .navbar__list > ul > li > a,
+    .navbar__header > span {
+        font-size: 20px;
     }
 
     .navbar__list > ul > li::marker {

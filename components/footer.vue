@@ -22,6 +22,7 @@
                 <hr />
                 <ul>
                     <li><a href="https://github.com/JoKraken" target="_blank">Github</a></li>
+                    <li><a href="https://www.facebook.com/johanna.kraken" target="_blank">Facebook</a></li>
                     <li><a href="https://www.linkedin.com/in/johannakraken/" target="_blank">LinkedIn</a></li>
                     <li><a href="https://www.xing.com/profile/Johanna_Kraken/cv" target="_blank">XING</a></li>
                 </ul>
@@ -36,7 +37,6 @@
     }
 
     .footer {
-        padding: 15px;
         display: flex;
         flex-flow: row;
         color: $white;
@@ -49,7 +49,7 @@
         //bottom: 0;
         right: 0;
         left: 0;
-        height: 185px;
+        height: 175px;
         z-index: -1;
 
         @include for-phone {
@@ -65,10 +65,20 @@
         @include for-phone {
             grid-template-columns: repeat(2, [col-start] 1fr);
         }
+
+        p, ul {
+            padding-left: 5px;
+        }
+
+        ul {
+            list-style: none;
+            
+        }
     }
 
     .footer__list > li {
         margin: 0 15px;
+        height: 100%;
 
         &::marker {
             content: none;
@@ -91,7 +101,7 @@
     .footer__pages,
     .footer__links {
         p {
-            margin-top: 0;
+            margin: 16px 0;
         }
     }
 </style>

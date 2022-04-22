@@ -1,6 +1,6 @@
 <template>
   <div class="gridContainer__element">
-    <Links :data="{link: '/portfolio/', name: 'left-arrow', url: 'zurück'}"/>
+    <Links :data="{link: '/portfolio/', name: 'left-arrow.png', url: 'zurück'}"/>
     <h1 class="project__headline">{{data.name}} <span class="project__datum">{{data.datum}}</span></h1>
     <p class="project__filter"> 
       <Button secoundary="true" :data="{name: data.category[0]}"/>
@@ -60,7 +60,7 @@
     height: 40vh;
 
    .carousel__img {
-      height: 40vh;
+      height: 35vh;
     }
   }
 </style>
