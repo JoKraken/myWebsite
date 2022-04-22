@@ -94,6 +94,8 @@ export default {
 
 #slider {
   overflow: hidden;
+  border: $primary 1px solid;
+  border-radius: 10px;
 }
 
 .slide {

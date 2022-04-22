@@ -9,7 +9,8 @@
   export default {
       props: ['data'],
       data() {
-          let img = (this.data.name) ? require('@/assets/icons/'+this.data.name+'.png') : "";
+          let img = (this.data.name) ? require('@/assets/icons/'+this.data.name) : "";
+          console.log(img);
           return {
             img
           };
@@ -25,6 +26,7 @@
 
       & > img {
         margin-right: 5px;
+        width: 15px;
       }
 
       & > p { 
